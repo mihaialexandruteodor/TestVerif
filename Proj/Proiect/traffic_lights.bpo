@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="EVTALLHYP(" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="⊤" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#("/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

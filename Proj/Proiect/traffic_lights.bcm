@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scMachineFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd">
+    <org.eventb.core.scInvariant name="'" org.eventb.core.label="inv1" org.eventb.core.predicate="⊤" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#(" org.eventb.core.theorem="false"/>
+    <org.eventb.core.scEvent name="(" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#'"/>
+</org.eventb.core.scMachineFile>
