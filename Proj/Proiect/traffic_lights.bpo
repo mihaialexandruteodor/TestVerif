@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="5">
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
     <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0"/>
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
         <org.eventb.core.poIdentifier name="cars_go" org.eventb.core.type="BOOL"/>
         <org.eventb.core.poIdentifier name="peds_go" org.eventb.core.type="BOOL"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="5">
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
         <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTALLHYPpeds_gp"/>
         <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(FALSE=TRUE∧FALSE=TRUE)" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
         <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#'"/>
@@ -18,7 +18,54 @@
         <org.eventb.core.poIdentifier name="peds_go'" org.eventb.core.type="BOOL"/>
     </org.eventb.core.poPredicateSet>
     <org.eventb.core.poPredicateSet name="EVTALLHYPpeds_gp" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gp" org.eventb.core.poStamp="0"/>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="4">
+    <org.eventb.core.poSequent name="set cars/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTALLHYPpeds_gq"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(new_value=TRUE∧peds_go=TRUE)" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poSequent#set cars\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpeds_gq" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+        <org.eventb.core.poIdentifier name="cars_go'" org.eventb.core.type="BOOL"/>
+        <org.eventb.core.poIdentifier name="new_value" org.eventb.core.type="BOOL"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpeds_gq" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gq" org.eventb.core.poStamp="3">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="new_value∈BOOL" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="set peds stop/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTALLHYPpeds_gr"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(FALSE=TRUE∧peds_go=TRUE)" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#."/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poSequent#set peds stop\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpeds_gr" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="cars_go'" org.eventb.core.type="BOOL"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpeds_gr" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gr" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="set_peds_go/grd1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gs"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="cars_go=FALSE" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+        <org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gs"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="set_peds_go/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="1">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTALLHYPpeds_gs"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="¬(cars_go=TRUE∧TRUE=TRUE)" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#0"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poSequent#set_peds_go\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTpeds_gs" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="peds_go'" org.eventb.core.type="BOOL"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPpeds_gs" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#EVTIDENTpeds_gs" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="cars_go=FALSE" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.event#0|org.eventb.core.guard#'"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Proiect/traffic_lights.bpo|org.eventb.core.poFile#traffic_lights|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="cars_go∈BOOL" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#("/>
         <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="peds_go∈BOOL" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#+"/>
         <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="¬(cars_go=TRUE∧peds_go=TRUE)" org.eventb.core.source="/Proiect/traffic_lights.bum|org.eventb.core.machineFile#traffic_lights|org.eventb.core.invariant#,"/>
