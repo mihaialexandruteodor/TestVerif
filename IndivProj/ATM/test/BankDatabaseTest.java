@@ -10,7 +10,7 @@ class BankDatabaseTest {
     Account accounts2;
     Account accounts3;
     Account accounts4;
-    Account[] accounts;
+    static Account[] accounts;
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
@@ -25,11 +25,10 @@ class BankDatabaseTest {
 
     @org.junit.jupiter.api.AfterEach
     void tearDown() {
-        bd = null;
-        accounts1 = null;
-        accounts2 = null;
-        accounts3 = null;
-        accounts4 = null;
+        for (Account acc : accounts) {
+            acc= null;
+        }
+        accounts = null;
     }
 
     @org.junit.jupiter.api.Test
