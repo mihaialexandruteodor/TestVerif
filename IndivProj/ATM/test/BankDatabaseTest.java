@@ -43,7 +43,7 @@ class BankDatabaseTest {
         {
             int bound = ThreadLocalRandom.current().nextInt(partitioning[i] , partitioning[i+1] + 1);
 
-            assertTrue(accounts[i].getAccountNumber() <= bound);
+            assertTrue(bd.getAccount(partitioning[i]).getAccountNumber() <= bound);
         }
 
 
@@ -63,34 +63,23 @@ class BankDatabaseTest {
 
     @org.junit.jupiter.api.Test
     void getAvailableBalance() {
+            assertEquals(bd.getAccount(12345).getAvailableBalance(),accounts1.getAvailableBalance());
     }
 
     @org.junit.jupiter.api.Test
     void getTotalBalance() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void credit() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void debit() {
+        assertEquals(bd.getAccount(99999).getTotalBalance(),accounts4.getTotalBalance());
     }
 
     @org.junit.jupiter.api.Test
     void getadmin() {
+        assertEquals(bd.getAccount(99999).getAdmin(),1);
     }
 
     @org.junit.jupiter.api.Test
     void getaccpin() {
-
+        assertEquals(bd.getAccount(12345).getPin(),11111);
     }
 
-    @org.junit.jupiter.api.Test
-    void adduser() {
-    }
 
-    @org.junit.jupiter.api.Test
-    void deleteuser() {
-    }
 }
