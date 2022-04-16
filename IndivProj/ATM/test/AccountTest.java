@@ -29,6 +29,8 @@ class AccountTest {
 
     @Test
     void validatePIN() {
+
+        assertTrue(accounts[0].validatePIN(11111));
     }
 
     @Test
