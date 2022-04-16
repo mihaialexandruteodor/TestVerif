@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,10 +36,20 @@ class AccountTest {
 
     @Test
     void getAvailableBalance() {
+        assertEquals(accounts[1].getAvailableBalance(),200.0);
     }
 
     @Test
     void getTotalBalance() {
+
+        // EQUIVALENCE PARTITIONING
+
+        double lesserValue = ThreadLocalRandom.current().nextDouble(0, 1100.0);
+        double moreValue = ThreadLocalRandom.current().nextDouble(1300.0, 5000.0);
+
+        assertTrue(accounts[0].getAvailableBalance() > lesserValue);
+        assertTrue(accounts[0].getAvailableBalance() < moreValue);
+
     }
 
     @Test
