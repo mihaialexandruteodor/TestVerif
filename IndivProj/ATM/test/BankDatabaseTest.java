@@ -34,21 +34,18 @@ class BankDatabaseTest {
     @org.junit.jupiter.api.Test
     void getAccount() {
 
-        // EQUIVALENCE PARTITIONING
+        int[] accountNumbers = {12345, 19234, 98765, 99999};
 
-        int[] partitioning = {12345, 19234, 98765, 99999, 100000};
+        for (int i = 0; i < 4; ++i) {
+            assertEquals(bd.getAccount(accountNumbers[i]).getAccountNumber(), accounts[i].getAccountNumber());
+            assertEquals(bd.getAccount(accountNumbers[i]).getPin(), accounts[i].getPin());
+            assertEquals(bd.getAccount(accountNumbers[i]).getUsername(), accounts[i].getUsername());
+            assertEquals(bd.getAccount(accountNumbers[i]).getAdmin(), accounts[i].getAdmin());
+            assertEquals(bd.getAccount(accountNumbers[i]).getAvailableBalance(), accounts[i].getAvailableBalance());
+            assertEquals(bd.getAccount(accountNumbers[i]).getTotalBalance(), accounts[i].getTotalBalance());
+            assertEquals(bd.getAccount(accountNumbers[i]).getISadmin(), accounts[i].getISadmin());
 
-        for(int i=0; i < 4; ++i)
-        {
-            int bound = ThreadLocalRandom.current().nextInt(partitioning[i] , partitioning[i+1] + 1);
-
-            assertTrue(bd.getAccount(partitioning[i]).getAccountNumber() <= bound);
         }
-
-
-
-
-
     }
 
     @org.junit.jupiter.api.Test
@@ -67,6 +64,23 @@ class BankDatabaseTest {
 
     @org.junit.jupiter.api.Test
     void getTotalBalance() {
+
+        // partitionare in clase de echivalenta
+        /*
+
+        CLASE DE INTRARI
+        N1 = [0.0, 200.0)
+        N2 = [200.0, 1000.0)
+        N3 = [1000.0, 1200.0)
+        N4 = [1200.0, 10000.0]
+
+
+        CLASE DE IESIRI
+
+
+         */
+
+        double[] partitioning = {0.0, 200.0, 1000.0, 1200.0, 10000.0};
         assertEquals(bd.getAccount(99999).getTotalBalance(),accounts4.getTotalBalance());
     }
 
