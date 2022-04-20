@@ -1,0 +1,48 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage{bsymb,b2latex}
+\begin{document}
+\SingleHeader{traffic\_lights}
+\MACHINE{traffic\_lights}{}{}{}
+\VARIABLES{
+	\Variable{cars\_go}{}
+	\Variable{peds\_go}{}
+}
+\INVARIANTS{
+	\Invariant{inv1}{false}{$cars\_go \in{} BOOL$}{}
+	\Invariant{inv2}{false}{$peds\_go \in{} BOOL$}{}
+	\Invariant{inv3}{false}{$\lnot{}(cars\_go = TRUE \land{} peds\_go = TRUE)$}{}
+}
+\EVENTS{
+\INITIALISATION{false}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$cars\_go \bcmeq{} FALSE$}{true}{}
+		\Action{act2}{$peds\_go \bcmeq{} FALSE$}{true}{}
+	}
+}
+\EVT{set~cars}{false}{ordinary}{}{}{
+	\ANY{
+		\Param{new\_value}{true}{}
+	}
+	\GUARDS{true}{
+		\Guard{grd1}{true}{$new\_value \in{} BOOL$}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$cars\_go \bcmeq{} new\_value$}{true}{}
+	}
+}
+\EVT{set~peds~stop}{false}{ordinary}{}{}{
+	\ACTIONS{false}{
+		\Action{act1}{$cars\_go \bcmeq{} FALSE$}{true}{}
+	}
+}
+\EVT{set\_peds\_go}{false}{ordinary}{}{}{
+	\GUARDS{false}{
+		\Guard{grd1}{false}{$cars\_go = FALSE $}{true}{}
+	}
+	\ACTIONS{true}{
+		\Action{act1}{$peds\_go \bcmeq{} TRUE$}{true}{}
+	}
+}
+}
+\END
+\end{document}
