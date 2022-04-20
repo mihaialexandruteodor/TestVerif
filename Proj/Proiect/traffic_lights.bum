@@ -18,7 +18,7 @@
         <org.eventb.core.action name="'" org.eventb.core.assignment="cars_go ≔ FALSE" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
     <org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="set_peds_go">
-        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="cars_go = FALSE " org.eventb.core.theorem="true"/>
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="cars_go = FALSE "/>
         <org.eventb.core.action name="(" org.eventb.core.assignment="peds_go ≔ TRUE" org.eventb.core.label="act1"/>
     </org.eventb.core.event>
 </org.eventb.core.machineFile>
