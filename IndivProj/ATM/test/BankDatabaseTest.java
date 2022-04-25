@@ -76,12 +76,58 @@ class BankDatabaseTest {
 
 
         CLASE DE IESIRI
+        I1={"Balans Insuficient"}
+        I2={"Cont standard"}
+        I3={"Cont premium"}
+        I3={"Cont premium plus"}
 
+        CLASE ECHIVALENTA FINALE
+        C11={n | n apartine lui N1 si iesirea este I1}
+        C22={n | n apartine lui N2 si iesirea este I2}
+        C33={n | n apartine lui N3 si iesirea este I3}
+        C44={n | n apartine lui N4 si iesirea este I4}
 
          */
 
-        double[] partitioning = {0.0, 200.0, 1000.0, 1200.0, 10000.0};
-        assertEquals(bd.getAccount(99999).getTotalBalance(),accounts4.getTotalBalance());
+        double[] intrari = {0.0, 200.0, 1000.0, 1200.0, 10000.0};
+        String[] iesiri = {"Balans Insuficient","Cont standard", "Cont premium", "Cont premium plus"};
+        String clasaEchivalenta = "Nedeterminat";
+
+        //assertEquals(bd.getAccount(99999).getTotalBalance(),accounts4.getTotalBalance());
+
+        for(Account acc : accounts)
+        {
+            double totalBalance = acc.getTotalBalance();
+
+            if( intrari[0] <= totalBalance && totalBalance < intrari[1])
+                clasaEchivalenta = "C11";
+
+            if( intrari[1] <= totalBalance && totalBalance < intrari[2])
+                clasaEchivalenta = "C22";
+
+            if( intrari[2] <= totalBalance && totalBalance < intrari[3])
+                clasaEchivalenta = "C33";
+
+            if( intrari[3] <= totalBalance && totalBalance < intrari[4])
+                clasaEchivalenta = "C44";
+
+            switch (clasaEchivalenta)
+            {
+                case "C11":
+                    assertEquals(clasaEchivalenta,"C11");
+                    break;
+                case "C22":
+                    assertEquals(clasaEchivalenta,"C22");
+                    break;
+                case "C33":
+                    assertEquals(clasaEchivalenta,"C33");
+                    break;
+                case "C44":
+                    assertEquals(clasaEchivalenta,"C44");
+                    break;
+            }
+
+        }
     }
 
     @org.junit.jupiter.api.Test
