@@ -50,8 +50,8 @@ class AccountTest {
         double lesserValue = ThreadLocalRandom.current().nextDouble(0, 1100.0);
         double moreValue = ThreadLocalRandom.current().nextDouble(1300.0, 5000.0);
 
-        assertTrue(accounts[0].getAvailableBalance() > lesserValue);
-        assertTrue(accounts[0].getAvailableBalance() < moreValue);
+        assertTrue(accounts[0].getTotalBalance() > lesserValue);
+        assertTrue(accounts[0].getTotalBalance() < moreValue);
 
     }
 
