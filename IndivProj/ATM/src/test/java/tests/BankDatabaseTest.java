@@ -1,6 +1,9 @@
-import java.util.concurrent.ThreadLocalRandom;
+package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import app.Account;
+import app.BankDatabase;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BankDatabaseTest {

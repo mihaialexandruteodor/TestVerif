@@ -1,3 +1,5 @@
+package app;
+
 public class DepositSlot
 {
     // indicates whether envelope was received (always returns true,
