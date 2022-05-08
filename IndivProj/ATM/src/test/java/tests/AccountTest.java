@@ -47,11 +47,13 @@ class AccountTest {
 
         // valori de frontiera
 
-        double lesserValue = ThreadLocalRandom.current().nextDouble(0, 1100.0);
-        double moreValue = ThreadLocalRandom.current().nextDouble(1300.0, 5000.0);
+        double lesserValue = ThreadLocalRandom.current().nextDouble(0, 1199.0);
+        double moreValue = ThreadLocalRandom.current().nextDouble(1201.0, 5000.0);
+        double actualValue = 1200.0;
 
         assertTrue(accounts[0].getTotalBalance() > lesserValue);
         assertTrue(accounts[0].getTotalBalance() < moreValue);
+        assertTrue(accounts[0].getTotalBalance() == actualValue);
 
     }
 
