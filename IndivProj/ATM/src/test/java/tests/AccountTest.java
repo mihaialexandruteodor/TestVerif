@@ -45,7 +45,7 @@ class AccountTest {
     @Test
     void getTotalBalance() {
 
-        // EQUIVALENCE PARTITIONING
+        // valori de frontiera
 
         double lesserValue = ThreadLocalRandom.current().nextDouble(0, 1100.0);
         double moreValue = ThreadLocalRandom.current().nextDouble(1300.0, 5000.0);
