@@ -136,9 +136,27 @@ class BankDatabaseTest {
     @org.junit.jupiter.api.Test
     void getTotalBalance_GrafCauzaEfect() {
 
-        //graf cauza efect
+        /*graf cauza efect
+        Cauze:
+          C1: n valid: n intre 200.0 si 1200.0
+          C2: n invalid: n < 200.0
+          C3: n valid, fonduri reziduale: n > 1200.0
 
-        String[][] graf = { {"N1","I1","C11"},{"N2","I2","C22"}, {"N3","I3","C33"}, {"N4","I4","C44"}};
+        Efecte:
+           E1: balans suficient
+           E2: balans insuficient
+
+
+        GRAF:
+        | C1  |  1 | 0  | 0  |
+        | C2 | 0  |  1 |  0 |
+        | C3  | 0  | 0  | 1  |
+        |E1   | 1  |  0 | 1  |
+        |E2   | 0  | 1  | 0  |
+
+         */
+
+        String[][] graf = { {"C1","1","0","0"}, {"C2","0","1","0"}, {"C3","0","0","1"}, {"E1","1","0","1"}, {"E2","0","1","0"}};
     }
 
     @org.junit.jupiter.api.Test
