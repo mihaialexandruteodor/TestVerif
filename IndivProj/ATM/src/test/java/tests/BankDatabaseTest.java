@@ -66,7 +66,7 @@ class BankDatabaseTest {
     }
 
     @org.junit.jupiter.api.Test
-    void getTotalBalance() {
+    void getTotalBalance_claseEchivaneta() {
 
         // partitionare in clase de echivalenta
         /*
@@ -131,6 +131,14 @@ class BankDatabaseTest {
             }
 
         }
+    }
+
+    @org.junit.jupiter.api.Test
+    void getTotalBalance_GrafCauzaEfect() {
+
+        //graf cauza efect
+
+        String[][] graf = { {"N1","I1","C11"},{"N2","I2","C22"}, {"N3","I3","C33"}, {"N4","I4","C44"}};
     }
 
     @org.junit.jupiter.api.Test
