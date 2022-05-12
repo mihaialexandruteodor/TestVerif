@@ -157,6 +157,34 @@ class BankDatabaseTest {
          */
 
         String[][] graf = { {"C1","1","0","0"}, {"C2","0","1","0"}, {"C3","0","0","1"}, {"E1","1","0","1"}, {"E2","0","1","0"}};
+        
+        String cause = null;
+        String effect = "";
+
+        for(Account acc : accounts) {
+            double n = acc.getTotalBalance();
+            
+            if(n> 200.0 && n < 1200.0)
+                cause = "C1";
+            else if(n < 200.0)
+                cause = "C2";
+            else if(n > 1200.0)
+                cause = "C3";
+            
+            for(int i=0; i<4; ++i)
+            {
+                if(graf[i][0] == cause)
+                {
+                    effect += cause;
+                    effect += ",";
+                    for(int j=1; j<4; ++j)
+                    {
+                        effect += graf[i][j];
+                        effect += ",";
+                    }
+                }
+            }
+        }
     }
 
     @org.junit.jupiter.api.Test
