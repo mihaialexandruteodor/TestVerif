@@ -153,6 +153,8 @@ class BankDatabaseTest {
         | C3  | 0  | 0  | 1  |
         | E1  | 1  | 0  | 1  |
         | E2  | 0  | 1  | 0  |
+        | n  | 0.0  | 1000.0  | 10000.0  |
+        | Effect  | balans insuficient  | balans suficient  | balans suficient  |
 
          */
 
@@ -175,13 +177,10 @@ class BankDatabaseTest {
             {
                 if(graf[i][0] == cause)
                 {
-                    effect += cause;
-                    effect += ",";
-                    for(int j=1; j<4; ++j)
-                    {
-                        effect += graf[i][j];
-                        effect += ",";
-                    }
+                    if(cause == "C2")
+                        effect = "balans insuficient";
+                    else
+                        effect = "balans suficient";
                 }
             }
         }
